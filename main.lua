@@ -16,10 +16,8 @@ local createLink = widget.newButton( {
     label = "Create Link",
     id = "createLink",
     onRelease = function ( )
-        print("run1312")
         longLink = firebaseDynamicLinks.buildUrl({domain="e2rfu.app.goo.gl", iOSBundleID="com.mycompany.App", iOSCustomScheme="firebaseTest",iOSAppStoreID="284882215",iOSFallbackURL="https://facebook.com", androidPackageName="com.mycompany.App",androidFallbackURL="https://google.com", analyticsMedium="test medium", analyticsSource="test app", analyticsCampaign="test campagin", analyticsTerm="term" })
         print(longLink)
-        print("run1315")
     end
 } )
 createLink.x, createLink.y = display.contentCenterX, display.contentCenterY-20
