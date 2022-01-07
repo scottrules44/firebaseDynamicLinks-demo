@@ -13,26 +13,26 @@ settings =
 	},
 	--]]
 	android =
-    {
-        useGoogleServicesJson = true,
-	minSdkVersion = 16,
-        manifestChildElements =
-        {
-            -- Array of strings
-            [[
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data
-                    android:host="coronaplugin.page.link"
-                    android:scheme="https"/>
-            </intent-filter>
-            ]],
-            --replace coronaplugin.page.link with your own link
-        },
+	    {
+		useGoogleServicesJson = true,
+		minSdkVersion = 16,
+		manifestChildElements =
+		{
+		    -- Array of strings
+		    [[
+		    <intent-filter>
+			<action android:name="android.intent.action.VIEW"/>
+			<category android:name="android.intent.category.DEFAULT"/>
+			<category android:name="android.intent.category.BROWSABLE"/>
+			<data
+			    android:host="coronaplugin.page.link"
+			    android:scheme="https"/>
+		    </intent-filter>
+		    ]],
+		    --replace coronaplugin.page.link with your own link
+		},
 
-    },
+	    },
 	iphone =
 	{
 
@@ -48,7 +48,7 @@ settings =
 		},
 	},
 	plugins =
-    {
+    	{
         ["plugin.firebaseDynamicLinks"] =
         {
             publisherId = "tech.scotth",
