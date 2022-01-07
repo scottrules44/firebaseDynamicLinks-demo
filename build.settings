@@ -15,15 +15,35 @@ settings =
 	android =
     {
         useGoogleServicesJson = true,
-				minSdkVersion = 16,
+	minSdkVersion = 16,
+        manifestChildElements =
+        {
+            -- Array of strings
+            [[
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:host="coronaplugin.page.link"
+                    android:scheme="https"/>
+            </intent-filter>
+            ]],
+            --replace coronaplugin.page.link with your own link
+        },
+
     },
 	iphone =
 	{
 
 		xcassets = "Images.xcassets",
+        entitlements = {
+            ["com.apple.developer.associated-domains"] = {"applinks:coronaplugin.page.link"},
+        }
 		plist =
 		{
-			CFBundleURLTypes ={ { CFBundleURLSchemes = { "firebaseTest" } }},
+            FirebaseAppDelegateProxyEnabled = false,
+			CFBundleURLTypes ={ { CFBundleURLSchemes = { "firebaseTest", "com.scottrules44.testApp" } }},
 			UILaunchStoryboardName = "LaunchScreen",
 		},
 	},
